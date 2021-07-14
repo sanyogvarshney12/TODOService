@@ -29,10 +29,10 @@ public class TaskDTO {
 	@Schema(description = "Desctiption of the task", required = true)
 	@NotNull(message = "{taskDto.description.null}")
 	private String description;
-	@Schema(example = "yyyy-MM-ddTHH:mm:ss", description = "Task Creation Time", required = false)
-	private LocalDateTime createdOn;
-	@Schema(example = "yyyy-MM-ddTHH:mm:ss", description = "Task Updation Time", required = false)
-	private LocalDateTime modifiedOn;
+	@Schema(example = "dd-MM-yyyy HH:mm:ss", description = "Task Creation Time", required = false)
+	private String createdOn;
+	@Schema(example = "dd-MM-yyyy HH:mm:ss", description = "Task Updation Time", required = false)
+	private String modifiedOn;
 	@Schema(example = "Sanyog Varshney", description = "User who created task", required = true)
 	private String userName;
 	
