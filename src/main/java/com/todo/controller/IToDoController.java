@@ -27,9 +27,9 @@ public interface IToDoController extends TaskAPI{
 	@PostMapping(path = "/task", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<TaskDTO> createTask(@RequestBody TaskDTO taskDto);
 	
-	@GetMapping(path = "/task", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "/task", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<TaskDTO>> findTasksByUserName(@RequestParam("username") String userName);
 	
-	@GetMapping(path = "/task/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "/task/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<TaskDTO> findTaskById(@PathVariable String id);
 }

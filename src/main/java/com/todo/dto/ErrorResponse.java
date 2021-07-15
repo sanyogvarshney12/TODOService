@@ -1,9 +1,6 @@
 package com.todo.dto;
 
-import java.time.LocalDateTime;
-
-import org.apache.http.HttpStatus;
-
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Data;
 
@@ -19,8 +16,14 @@ import lombok.Data;
 @Builder
 public class ErrorResponse {
 
+	@Schema(description = "Request where the exception occured")
 	private String path;
-	private HttpStatus httpStatus;
+	@Schema(description = "Reference Data which is not found, due to which exception occured")
+	private String logRef;
+	@Schema(example = "400", description = "HttpStatus Code")
+	private int httpStatusCode;
+	@Schema(example = "BAD_REQUEST", description = "HttpStatus Name")
+	private String httpStatusName;
 	private String message;
-	private LocalDateTime timestamp;
+	private String timestamp;
 }

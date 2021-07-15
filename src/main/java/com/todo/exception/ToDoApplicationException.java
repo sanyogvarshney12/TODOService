@@ -15,8 +15,15 @@ public class ToDoApplicationException extends RuntimeException {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public ToDoApplicationException(String msg) {
+	private String logRef;
+	
+	public ToDoApplicationException(String msg, String logRef) {
 		super(msg);
+		this.logRef = logRef;
+	}
+	
+	public String getLogRef() {
+		return this.logRef;
 	}
 
 }

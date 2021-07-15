@@ -47,8 +47,7 @@ public class ToDoServiceImpl implements IToDoService {
 		if(LOGGER.isInfoEnabled()) {
 			LOGGER.info("Inside ToDoServiceImpl class, findTaskById()");
 		}
-		TaskDTO dto = TransformerFunction.toTaskDto(repository.findById(id)
-				.orElseThrow(()-> new ToDoApplicationException("No task associated with this id exist in the system.")));
+		TaskDTO dto = TransformerFunction.toTaskDto(repository.findById(id).orElseThrow(()->new ToDoApplicationException("No Task with this ID found.", id)));
 		return new ResponseEntity<>(dto, HttpStatus.OK);
 	}
 	
